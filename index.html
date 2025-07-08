@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Spese</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestione Spese</h1>
+        <form id="expense-form">
+            <input type="date" id="data" required>
+            <input type="text" id="descrizione" placeholder="Descrizione" required>
+            <select id="categoria">
+                <option>Stipendio</option><option>Crediti</option><option>Alimentari</option>
+                <option>Pranzi / Cene</option><option>Casa</option><option>Sport</option>
+                <option>Benzina</option><option>Viaggi</option><option>Assicurazione</option>
+                <option>Mutuo casa</option><option>Rata moto</option><option>Imposte</option>
+                <option>Contributi</option><option>Telefonia</option><option>Satispay</option>
+            </select>
+            <input type="number" id="entrate" placeholder="Entrate" step="0.01">
+            <input type="number" id="uscite" placeholder="Uscite" step="0.01">
+            <button type="submit">Aggiungi</button>
+        </form>
+
+        <div class="filters">
+            <select id="filtro-mese"><option value="">Tutti i mesi</option></select>
+            <select id="filtro-categoria"><option value="">Tutte le categorie</option></select>
+        </div>
+
+        <table id="tabella-spese">
+            <thead>
+                <tr><th>Data</th><th>Mese</th><th>Categoria</th><th>Descrizione</th><th>Entrate</th><th>Uscite</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div id="saldo">Saldo: €0.00</div>
+        <button onclick="exportCSV()">Esporta CSV</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
