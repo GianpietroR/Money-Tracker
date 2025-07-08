@@ -1,0 +1,62 @@
+!DOCTYPE html
+html lang=it
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleGestione Spesetitle
+    link rel=stylesheet href=style.css
+head
+body
+    div class=container
+        h1Gestione Speseh1
+        form id=expense-form
+            input type=date id=data required
+            input type=text id=descrizione placeholder=Descrizione required
+            select id=categoria
+                optionStipendiooption
+                optionCreditioption
+                optionAlimentarioption
+                optionPranzi  Ceneoption
+                optionCasaoption
+                optionSportoption
+                optionBenzinaoption
+                optionViaggioption
+                optionAssicurazioneoption
+                optionMutuo casaoption
+                optionRata motooption
+                optionImposteoption
+                optionContributioption
+                optionTelefoniaoption
+                optionSatispayoption
+                optionAbbigliamentooption
+                optionHealthcareoption
+            select
+            input type=number id=entrate placeholder=Entrate step=0.01
+            input type=number id=uscite placeholder=Uscite step=0.01
+            button type=submitAggiungibutton
+        form
+
+        div class=filters
+            select id=filtro-meseoption value=Tutti i mesioptionselect
+            select id=filtro-categoriaoption value=Tutte le categorieoptionselect
+        div
+
+        table id=tabella-spese
+            thead
+                trthDataththMeseththCategoriaththDescrizioneththUsciteththEntrateththAzionithtr
+            thead
+            tbodytbody
+        table
+
+        label for=saldo-inizialeSaldo iniziale €labelinput type=number id=saldo-iniziale value=0 step=0.01
+        div id=saldo-correnteSaldo corrente €0.00div
+        div id=saldo-meseSaldo del mese €0.00div
+        div id=saldo-totaleSaldo totale €0.00div
+        canvas id=graficoTorta style=max-width100%;margin-top20px;canvas
+        button onclick=exportCSV()Esporta CSVbutton
+    div
+    script src=httpscdn.jsdelivr.netnpmchart.jsscript
+    script src=httpscdn.jsdelivr.netnpmchartjs-plugin-datalabels@2.0.0script
+    script src=script.jsscript
+body
+html
