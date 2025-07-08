@@ -46,8 +46,12 @@ function aggiornaTabella() {
         catSel.appendChild(opt);
     });
 
+    // Ordina le spese per data (dalla meno recente alla più recente)
+    const speseOrdinate = [...spese].sort((a, b) => new Date(a.data) - new Date(b.data));
+
+
     // Filtra e visualizza le spese, calcola i saldi
-    spese.forEach((riga, index) => {
+    speseOrdinate.forEach((riga, index) => { // Usa speseOrdinate qui
         const entrata = parseFloat(riga.entrate || 0);
         const uscita = parseFloat(riga.uscite || 0);
         const dataTransazione = new Date(riga.data);
@@ -76,7 +80,7 @@ function aggiornaTabella() {
             btnDel.textContent = "🗑️";
             btnDel.onclick = () => eliminaRiga(index);
             tdAzioni.appendChild(btnMod);
-            tdAzioni.appendChild(btnDel);
+Azioni.appendChild(btnDel);
             tr.appendChild(tdAzioni);
 
             tbody.appendChild(tr);
