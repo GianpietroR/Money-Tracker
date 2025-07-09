@@ -1,6 +1,6 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #121212;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1c1f3b;
     color: #e0e0e0;
     margin: 0;
     padding: 0;
@@ -88,7 +88,7 @@ canvas {
 }
 /* Stili per i pulsanti di modifica/elimina */
 td button {
-    background-color: #4CAF50; /* Verde per modifica */
+    background-color: #64b5f6; /* Verde per modifica */
     color: white;
     padding: 4px 8px;
     border: none;
@@ -99,5 +99,5 @@ td button {
 }
 
 td button:last-child {
-    background-color: #f44336; /* Rosso per elimina */
+    background-color: #873535; /* Rosso per elimina */
 }
